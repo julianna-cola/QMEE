@@ -6,8 +6,8 @@ library(tidyverse)
 library (readr)
 library(dplyr)
 
-setwd("~/Desktop/QMEE Data")
-EUST_Data <- as_tibble(read.csv("../QMEE Data/BIO708 EUST Data Set.csv"))
+setwd("~../QMEE")
+EUST_Data <- as_tibble(read.csv("../QMEE/BIO708_EUST_Data_Set.csv"))
 
 # Note: "EUST" is an abbreviation of "European Starling"
 # This data looks at the average PFAS concentration from European starling eggs 
