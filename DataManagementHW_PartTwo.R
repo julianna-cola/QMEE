@@ -1,7 +1,7 @@
 # This is the "separate script that reads in your .rds file and does something with it"
 
 # Reading .rds file
-EUST_Data_Part_Two <- readRDS("EUST_Data.rds")
+EUST_Data_Part_Two <- readRDS("../QMEE/EUST_Data.rds")
 library(tidyverse)
 
 # One thing we can do is see if land use has an effect on PFAS levels. 
