@@ -6,8 +6,13 @@ library(tidyverse)
 library (readr)
 library(dplyr)
 
-setwd("../QMEE")
-EUST_Data <- as_tibble(read.csv("../QMEE/BIO708_EUST_Data_Set.csv"))
+## BMB: this is unnecessary ...
+## setwd("../QMEE")
+
+## this should ? work just as well.
+## read_csv will automatically return a tibble (has some slightly
+##  different behaviour which you may or may not want)
+EUST_Data <- as_tibble(read.csv("BIO708_EUST_Data_Set.csv"))
 
 # Note: "EUST" is an abbreviation of "European Starling"
 # This data looks at the average PFAS concentration from European starling eggs 
@@ -50,12 +55,19 @@ new_columns <- c(Year = "X",
                Average_Proportion_PFCAs = "Average.PFCA.Total.PFAAs")
 EUST_Data <- rename(EUST_Data, all_of(new_columns))
 
+## BMB: you can also do this (perhaps more transparently)
+##  via EUST_Data <- rename(EUST_Data, Year = "X", Land_Use = "Land.Use", etc.)
+## more fancily, you could use rename_with() to convert one or more dots
+##  to an underscore; see also janitor::clean_names()
+
 # Changing variable classes
 EUST_Data <- (EUST_Data 
               %>% mutate(Site=as.factor(Site))
               %>% mutate(Year=as.factor(Year))
               %>% mutate(Land_Use=as.factor(Land_Use))
 )
+## or equivalently
+EUST_Data <- EUST_Data %>% mutate(across(c(Site, Year, Land_Use), as.factor))
 
 #Now, if we double-check our column names and classes, everything looks great!
 str(EUST_Data)
@@ -83,8 +95,18 @@ print(max_check, n = 15)
 #  %>% arrange(desc(Average_PFSAs))
 #  %>% print(n = 15)
 
+
+(EUST_Data
+    %>% count(Site, Average_PFSAs, Average_PFCAs, Average_PFOS)
+    %>% arrange(desc(Average_PFSAs))
+) %>% print(n=15)
+
 # to print out more rows, but it only ever showed me ten rows. Something I 
-# should learn how to fix in the future!
+
+## should learn how to fix in the future!
+
+## BMB: this is an **extremely** subtle problem -- see above slight
+## variation -- I can explain what happened
 
 # Quickly, I want to check that the site names were inputted correctly and that there are
 # no accidental spelling errors (e.g., Langley and Langeley)

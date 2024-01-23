@@ -1,7 +1,7 @@
 # This is the "separate script that reads in your .rds file and does something with it"
 
 # Reading .rds file
-EUST_Data_Part_Two <- readRDS("../QMEE/EUST_Data.rds")
+EUST_Data_Part_Two <- readRDS("EUST_Data.rds")
 library(tidyverse)
 
 # One thing we can do is see if land use has an effect on PFAS levels. 
@@ -39,15 +39,21 @@ library(tidyverse)
 
 # We can also visualize this with a boxplot: 
 
-print(ggplot(EUST_Data_Part_Two, aes(x=Land_Use, y=Average_PFSAs)) + 
-      geom_boxplot() + 
+print(gg1 <- ggplot(EUST_Data_Part_Two, aes(x=Land_Use, y=Average_PFSAs)) +
+      ## BMB: I prefer filled plots: https://clauswilke.com/dataviz/avoid-line-drawings.html
+      geom_boxplot(fill = "gray") + 
       theme_classic() + 
       labs(y="Average Sum of PFSAs (ng/g ww)") + 
       scale_x_discrete(name='Site',labels = c('Industrial', 'Landfill', 'Rural'))
 )
 
 # Looks like there are a lot of elevated outliers for the industrial and landfill land use
-# types. 
+## types.
+
+## BMB: careful about the meaning of 'outliers' in a box plot --
+## a box plot may also make things look much more sensible ...
+
+gg1 + scale_y_log10()
 
 # One other quick thing we can visualize is how prevalent PFOS are compared to the 
 # total amount of PFSAs: 
@@ -57,3 +63,5 @@ print(ggplot(EUST_Data_Part_Two, aes(x=PFOS_per_PFSAs))
 )
 
 # Looks like PFOS make up anywhere from around 70% to 100% of the total PFSA profile. 
+
+## BMB: nice job! 2.25

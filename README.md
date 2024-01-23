@@ -3,9 +3,9 @@ for BIO708
 
 # Assignment Two: Data Management
 
-"DataManagementHW_PartOne.R" aims to analyze and alter an imported data set. The data is analyzed for problems, assigned the correct classes, and altered slightly to make it more readable and useful for further analysis. This script also saves an .rds file of the altered data.
+`DataManagementHW_PartOne.R` aims to analyze and alter an imported data set. The data is analyzed for problems, assigned the correct classes, and altered slightly to make it more readable and useful for further analysis. This script also saves an .rds file of the altered data.
 
-"DataManagementHW_PartTwo.R" loads the .rds script and does some simple plots and calculations. 
+`DataManagementHW_PartTwo.R` loads the .rds script and does some simple plots and calculations. 
 
 Both scripts can be found in the main branch of the QMEE directory. In the future, this data can be used to analyze spatial and temporal trends in PFASs across Canada. Since the data spans about ten years, it would be possible to see if the passing of time has had any effect on PFASs. As well, we can see if certain land use types or sites have elevated PFAS levels. This may help us understand which sites and land use types are the most polluted and may need careful monitoring in the future. 
 
