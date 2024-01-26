@@ -1,6 +1,10 @@
 # QMEE
 for BIO708
 
+# Assignment Three: Data Visualization
+
+The file for this assignment can be found in `DataVisualizationHW.R`. It uses the data file `BIO708_EUST_Data_Set.csv` for all analyses.  
+
 # Assignment Two: Data Management
 
 `DataManagementHW_PartOne.R` aims to analyze and alter an imported data set. The data is analyzed for problems, assigned the correct classes, and altered slightly to make it more readable and useful for further analysis. This script also saves an .rds file of the altered data.
