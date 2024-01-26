@@ -3,7 +3,7 @@ for BIO708
 
 # Assignment Three: Data Visualization
 
-The file for this assignment can be found in `DataVisualizationHW.R`. It uses the data file `BIO708_EUST_Data_Set.csv` for all analyses.  
+The file for this assignment can be found in `DataVisualizationHW.R`. It uses the data file `BIO708_EUST_Data_Set.csv` for all analyses. Both scripts can be found in the main branch of the QMEE directory.  
 
 # Assignment Two: Data Management
 
