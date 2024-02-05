@@ -1,6 +1,10 @@
 # QMEE
 for BIO708
 
+# Assignment Four: Statistical Philosophy
+
+Files for this assignment are titled `MMV_Question.txt` and `HypothesisAssignment.txt`. Both files can be viewed in the main branch of the QMEE directory.
+
 # Assignment Three: Data Visualization
 
 The file for this assignment can be found in `DataVisualizationHW.R`. It uses the data file `BIO708_EUST_Data_Set.csv` for all analyses. Both scripts can be found in the main branch of the QMEE directory.  
