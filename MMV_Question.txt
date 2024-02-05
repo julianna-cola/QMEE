@@ -1,1 +1,28 @@
-MMV Question Known values: 1) Rapid tests give a positive result 100% of the time for people with the virus2) Rapid tests give a positive result 5% of the time for people without the virus3) The population has a prevalence of 1% Question: What is the probability that a random person from the population who tests positive for MMV has the virus? Solving:We can use Bayes Theorem to solve, where P(A|B) = [P(B|A)*P(A)]/P(B)We can say that event ÒAÓ is the likelihood of someone having MMV and event ÒBÓ is the likelihood of a positive test result. P(B|A), or the likelihood that someone gets a positive result given they have MMV, is 1. P(A), or the likelihood that someone in this population has MMV, is 0.0.1. P(B) can be calculated using the law of total probability, where, P(B) = P(B?A) * P(A) + P(B?ÂA) * P(ÂA)We already know P(B?A) and P(A). P(B?ÂA) is the likelihood that someone without the virus receives a positive result, which is 0.05. P(ÂA) is the complement of P(A), which is 0.99. Therefore, P(A) = 1*0.01+0.05*0.99 = 0.0595. We can plug all these values into our initial equation: P(A|B) = 1*0.01/0.0595 = 0.168 Å 0.17. THEREFORE, the probability that someone  who tests positive for MMV has the virus is about 17%. 
+MMV Question 
+
+Known values: 
+1) Rapid tests give a positive result 100% of the time for people with the virus
+2) Rapid tests give a positive result 5% of the time for people without the virus
+3) The population has a prevalence of 1% 
+
+Question: 
+What is the probability that a random person from the population who tests positive for MMV has the virus? 
+
+Solving:
+We can use Bayes Theorem to solve, where 
+P(A|B) = [P(B|A)*P(A)]/P(B)
+We can say that event A is the likelihood of someone having MMV and event B is the likelihood of a positive test result. 
+P(B|A), or the likelihood that someone gets a positive result given they have MMV, is 1. 
+P(A), or the likelihood that someone in this population has MMV, is 0.0.1. 
+P(B) can be calculated using the law of total probability, where, 
+P(B) = P(B?A) * P(A) + P(B'A) * P('A)
+We already know P(B|A) and P(A). 
+P(B'A) is the likelihood that someone without the virus receives a positive result, which is 0.05. 
+P('A) is the complement of P(A), which is 0.99. 
+Therefore, P(A) = 1*0.01+0.05*0.99 = 0.0595. 
+We can plug all these values into our initial equation: 
+P(A|B) = 1*0.01/0.0595 = 0.168 or about 0.17. 
+
+THEREFORE, the probability that someone who tests positive for MMV has the virus is about 17%. 
+
+What I would tell my friend: A positive result on the rapid test doesn't necessarily mean they have MMV. They should really go to the doctor to get checked out. Also, MMV doesn't seem so bad. At least they'll be productive. 
