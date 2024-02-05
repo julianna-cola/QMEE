@@ -15,7 +15,7 @@ We can say that event A is the likelihood of someone having MMV and event B is t
 P(B|A), or the likelihood that someone gets a positive result given they have MMV, is 1. 
 P(A), or the likelihood that someone in this population has MMV, is 0.0.1. 
 P(B) can be calculated using the law of total probability, where, 
-P(B) = P(B?A) * P(A) + P(B'A) * P('A)
+P(B) = P(B|A) * P(A) + P(B'A) * P('A)
 We already know P(B|A) and P(A). 
 P(B'A) is the likelihood that someone without the virus receives a positive result, which is 0.05. 
 P('A) is the complement of P(A), which is 0.99. 
