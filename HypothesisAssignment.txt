@@ -1,1 +1,11 @@
-Hypothesis GenerationUsing what I know about PFAS, I may hypothesize that starling eggs form landfills contain higher PFOS concentrations than eggs from industrial areas or rural sites. My null hypothesis would be that there is no significant difference in PFOS levels between the land use types. To test this statistically, I could perform an ANOVA. The PFOS concentration per egg pool would be the dependant variable, while the land use type (rural, landfill, industrial) would be the independent variable. The three groups in the ANOVA would be the three land use types. If I can reject the null hypothesis using the ANOVA, I would follow up with a post-hoc test. For example, I could use a Tukey HSD test to compare pairs of the groups together to see which groups significantly differ from each other. For my hypothesis, I would compare landfills to rural sites and landfills to industrial sites. Aside from doing the tests, I think it would be beneficial to plot the mean PFOS concentrations from each land use type along with the confidence intervals. This may present an easier way to understand the differences between the groups at a glance and would definitely be easier for a layperson to understand.  
+Hypothesis Generation
+
+Using what I know about PFAS, I may hypothesize that starling eggs from landfills contain higher PFOS concentrations than eggs from industrial areas or rural sites. 
+
+My null hypothesis would be that there is no significant difference in PFOS levels between the land use types. 
+
+To test this statistically, I could perform an ANOVA. The PFOS concentration per egg pool would be the dependent variable, while the land use type (rural, landfill, industrial) would be the independent variable. The three groups in the ANOVA would be the three land use types. 
+
+If I can reject the null hypothesis using the ANOVA, I would follow up with a post-hoc test. For example, I could use a Tukey HSD test to compare pairs of the groups together to see which groups significantly differ from each other. For my hypothesis, I would compare landfills to rural sites and landfills to industrial sites. 
+
+Aside from doing the tests, I think it would be beneficial to plot the mean PFOS concentrations from each land use type along with the confidence intervals. This may present an easier way to understand the differences between the groups at a glance and would definitely be easier for a layperson to understand.  
