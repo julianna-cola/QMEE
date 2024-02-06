@@ -44,6 +44,8 @@ EUST_Data <- EUST_Data %>% mutate(across(c(Site, Year, Land_Use), as.factor))
 # when presented visually. 
 
 
+## JD: It would be good to chop off the part of the script above and save the cleaned data to an .rda or .rds file -- or maybe even chop off a bit more (i.e., save your PFOS and PFCA data files
+
 PFOS_2022_data <- (EUST_Data 
                    %>% filter(Year == 2022)
                    %>% select(Site, Land_Use, Average_PFOS)
@@ -193,3 +195,7 @@ print(LandUseVis
 # 1) PFOS abundance per site in 2022 (which can be applied to any year/contaminant type)
 # 2) How do PFOS levels change per site over the course of a decade? 
 # 3) How do average PFOS levels compare between land use types over a decade? 
+
+## JD: Nice, clear set of plots. I think it might have been better to _not_ print the two that you were about to add direct labels to (you could leave a commented-out print statement if you wanted to clarify the work flow). The faceted plot is less beautiful than your other final plots; depending on purpose, you could consider making it wider, suppressing the legend, or breaking it up into separate figures (the last _seems_ worse for comparison, but it's sometimes useful to make pictures that are designed for comparing on the computer, by switching pages).
+
+Grade: 2.2
