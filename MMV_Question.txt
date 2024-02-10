@@ -26,3 +26,6 @@ P(A|B) = 1*0.01/0.0595 = 0.168 or about 0.17.
 THEREFORE, the probability that someone who tests positive for MMV has the virus is about 17%. 
 
 What I would tell my friend: A positive result on the rapid test doesn't necessarily mean they have MMV. They should really go to the doctor to get checked out. Also, MMV doesn't seem so bad. At least they'll be productive. 
+
+BMB:
+* what about the *reason* they were tested (which might influence the prior probability?)
