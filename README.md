@@ -1,6 +1,10 @@
 # QMEE
 for BIO708
 
+# Assignment Five: Linear Models
+
+The main code for this assignment is titled `LinearModelHW.r` and the data is from `EUST_Clean.rda`. Both files can be viewed in the main branch of the QMEE directory.
+
 # Assignment Four: Statistical Philosophy
 
 Files for this assignment are titled `MMV_Question.txt` and `HypothesisAssignment.txt`. Both files can be viewed in the main branch of the QMEE directory.
