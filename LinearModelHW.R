@@ -47,8 +47,11 @@ check_model(lmland)
 
 #   The model-predicted curves in posterior predictive check do not align with 
 #   the observed data. For one, the maximum observed values far exceed any values 
+## JD: These are densities, not values, but I agree it's pretty strange.
 #   that the model predicts. Although both the observed and predicted values peak
 #   at about the same place, the overall shapes of the curves are very dissimilar. 
+## JD: The PP plots are suggesting that you should have a substantial density of _negative_ values. This most likely means that your data are not well suited to being fit directly with a normal distribution (which is symmetric, so values with means near 0 are assumed to have a substantial probability of being negative). The simplest thing to try here is to transform your data (maybe just take the log if all of the values are positive, or else add some _carefully chosen_ value, respecting the units, before logging).
+
 #   To double-check this, I ran: 
 
 check_predictions(lmland)
@@ -94,3 +97,5 @@ plot(e1)
 plot(pairs(e1)) + geom_vline(xintercept = 0, lty = 2)
 
 # This pairwise-comparison site reinforces the hypothesis. 
+
+## Grade: 2/3
