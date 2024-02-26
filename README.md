@@ -1,5 +1,8 @@
-# QMEE
-for BIO708
+# QMEE for BIO708
+
+# Assignment Six: Meaningful, Interpretable, Comparable
+
+The main file for this assignment is titled `MIC_HW.Rmd`. The graphic for 1a is titled `MIC_1a`. Both files can be viewed in the main branch of the QMEE directory.
 
 # Assignment Five: Linear Models
 
