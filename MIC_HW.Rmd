@@ -1,0 +1,104 @@
+Meaningful Measurement, Interpretability, and Comparability
+
+1) Measurement
+
+a) Please see the file 'MIC_1a.png' in the QMEE directory for the image
+    
+To sum it up...
+
+Theoretical context - Pollutants called PFAS are present in starling eggs. This is because PFAS are present in the environment, are
+taken up by adult starlings via diet, and are maternally transferred to their eggs. 
+
+Empirical relational structure - PFOS concentrations can be accurately measured using LC-MS. It is measured in units of ng/g. 
+
+Numerical relational structure - PFOS quantities are considered a ratio scale.Numerically, we can see how the concentrations of PFOS in eggs differ between sites, and we can plot these numbers along a numerical axis. This allows us to analyse how values between sites differ. 
+
+Meaningful Inferences - Since this is ratio data, we can make meaningful inferences about the following (which is by no means an exhaustive list): the mean PFOS at the two sites, the distance between these means, whether one site has more PFOS than the other, and the standard deviation in PFOS at a given site. 
+
+  b) As mentioned previously, using ratio scale data grants me the freedom to make inferences
+     about count, mean, median, mode, percentiles, and standard deviations, while also
+     allowing for log transformations of the data. 
+
+2) Effect Sizes and Meaningful Magnitudes
+
+  a) Continuous response variable: PFOS concentration 
+     Predictor: Site (factor variable)
+
+  Planned measure of effect: Glass's Delta
+
+  Why: Right off the bat, I have to rule out using the r statistic, since only
+  one of my variables is continuous. When analyzing my data previously, I noticed that 
+  the standard deviations at my sites were significantly different. Biologically, this may be 
+  because polluted sites tend to have "hot spots", where the pollution levels are much higher 
+  compared to other areas within the same site. Meanwhile, reference sites are relatively 
+  consistent throughout. Therefore, I want to choose a measure of effect that accounts for
+  this. 
+  
+
+  One thing I am concerned about is the small sample size per site. 
+  For any given site in a given year, we are only able to collect ~10-50 eggs, 
+  depending on how many of our nest boxes are occupied. These eggs are then put into pools
+  of about 5 eggs, meaning that each site actually has 2-10 data points. Since this is a
+  relatively low number of data points, I should use a measure of effect that is less
+  skewed with fewer data points. Since Hedge's d is more well-suited for smaller
+  sample sizes, it would be a good fit for my calculations IF the standard deviations weren't
+  significantly different between sites. 
+  
+
+  Historically, it seems that the common statistical workflow in similar studies is 
+  as follows: 
+    1) Run an ANOVA to evaluate significant differences between sites
+    2) Tets for normality using a Shapiro-Wilk test 
+    3) Log-transform to approximate a normal distribution
+
+  From there, methods seem to differ quite a lot. I have noticed that a lot of 
+  papers forgo using effect sizes altogether, instead opting to only report p values. 
+  Through this class, I've learned that it is important to report beyond p values
+  and to put effort into determining effect sizes. Therefore, I do not agree with 
+  this historical precedent; however, the workflow outlined above makes sense given
+  the types of data we're working with. 
+
+
+  b) Glass's delta is a standardized measure of effect that scales values based on the 
+  standard deviation of the control group. This is the best choice when the standard 
+  deviations between sites are signifcantly different. My other alternative, Hedge's d,
+  uses pooled standard deviations. Given the spread of the data at different sites, this 
+  measure of effect would not be ideal. 
+
+  c) Positives: Useful for groups with small sample sizes, 
+                effective for IDing differences between a reference site and a contaminated site
+                
+   Negatives: May not acocunt for small sample sizes well, not widely used 
+             
+Going forward in the field of ecotoxicolgy, the regular use of effect size statistics 
+will make comparisons between studies much more feasible. This is especially important 
+for looking at PFAS concentrations in the environment and specifically in biota. Since 
+these studies take place at various sites around the world, it's important to be able 
+to compile all this data and to be able to compare between studies to determine what factors are the biggest indications for elevated PFAS concentrations. For example,recent work in the field has focused on wastewater treatment plants and landfills as point sources of PFAS contamination. The regular use of effect size and common statistical practices between studies will allow researchers to determine how much of an effect each of these land use types may have on PFAS abundance. 
+
+  d) In terms of the literature, there isn't much that I could find regarding what a 
+  "biologically relevant" difference between contaminant levels in bird eggs would be. 
+  Since I'm not too sure on how to scale my effect, I may start off with the default,
+  where anything from 0-0.5 is the grey area, and anything larger is biologically relevant.
+  This conclusion does not feel very satisfying though, as it is not specific to what I am
+  doing and is based on general guidelines. Going forward in developing this meaningful 
+  backdrop, I'll need to figure out what a "biologically meaningful" difference in 
+  contaminants would be. Some factors that may contribute to this could be how the
+  contaminant concentration in the eggs reflects the contamination in the soil or prey 
+  items, or the toxicological effects that present themselves at a given PFAS 
+  concentration. 
+
+  e) 1: The result is significant, but it is not deemed to be biologically relevant. 
+     2: The result is not significant, but that isn't to say there is no effect. 
+        Since the presence of the effect is unclear and due to the large confidence interval, it may be useful to reconsider the study design to try and narrow down the true biological relevance of the measure. 
+     3: The result is significant and is definitely biologically relevant due to a sufficiently large effect size.
+     4: The result is significant. The confidence interval mostly encapsulates the biologically relevant territory but also overlaps the grey area, so it is uncertain whether the effect is relevant. 
+     5: The result is significant. The confidence interval mostly lies in the grey area, but it uncertain whether the result is actually biologically relevant. 
+     6: The result is significant. The confidence interval is quite narrow, and it is uncertain whether the true value falls into the "not relevant" or "grey area" section.   
+
+* Note: In her video, Dr. Higgs stated that scenarios like 4-6 may all get treated 
+  similarly down the line (i.e., all just deemed significant without regard to their 
+  biological relevance). It is important in these scenarios to truly understand the 
+  confidence intervals and make inferences based on effect sizes. Fi this is not possible, a new study design may be useful to see the effect better 
+
+     7: The result is not significant and is not deemed to be biologically relevant. 
