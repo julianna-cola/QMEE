@@ -105,3 +105,6 @@ plot(e1)
 
 plot(pairs(e1)) + geom_vline(xintercept = 0, lty = 2)
 
+## JD: Kind of cool, but it definitely doesn't make much sense to fit a Poisson to things that aren't integers. And it should bug you that you need to round data off. Obviously this is an exercise, but it would have been a better choice to do a gamma distribution with a log link.
+
+## Grade 2/3
