@@ -1,6 +1,10 @@
 # QMEE for BIO708
 
-# Assignment Seven: QMEE
+# Assignment Eight: Bayesian Statistics
+
+The main file for this assignment is titled `BayesianStatsHW.r`, and the data is from `EUST_Clean.rda`. Both files can be viewed in the main branch of the QMEE directory.
+
+# Assignment Seven: GLM
 
 The main file for this assignment is titled `GLM_HW.r`, and the data is from `EUST_Clean.rda`. Both files can be viewed in the main branch of the QMEE directory.
 
