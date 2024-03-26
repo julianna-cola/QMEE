@@ -24,8 +24,7 @@ tail(EUST_Data)
 # have a substantial amount of negative values. Since this isn't possible, I want 
 # to try log transforming my data first before doing anything with it.
 
-EUST_new <- EUST_Data |> mutate(log_PFOS = log(Average_PFOS)
-)
+EUST_new <- EUST_Data |> mutate(log_PFOS = log(Average_PFOS))
 
 # Creating a Model
 a1 <- log_PFOS ~ 1 + Site + 1 + Land_Use + (1 + 1|Year)
