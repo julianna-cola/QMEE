@@ -12,6 +12,8 @@ library(coda) # required for rjags
 library(rjags)
 library(lme4)
 library(brms)
+library(bayesplot)
+library(bayestestR)
 
 # Loading in data
 load("EUST_Clean.rda")
@@ -66,6 +68,9 @@ test_prior <- function(p) {
 
 test_prior(b_prior)
 
+# I'm just going to move on for now and explore the different functions presented in class. 
+# Maybe I'll figure out why it's being weird. 
+
 # Fitting a Bayesian model
 
 a_lmer <- lmer(a1, EUST_new)
@@ -80,22 +85,56 @@ mcmc_trace(b_reg, regex_pars= "b_|sd_")
 
 # This output plots for each site, so I definitely did something wrong. I know in the example, 
 # days were not a categorical value and were numeric. This is probably where the 
-# issue stems from? What happens if I try to do this with numeric data...
-
-EUST_try <- 
+# issue stems from? 
 
 
 
+#####
 
+
+# What happens if I try to do this with numeric data...
+
+EUST_try <- (EUST_new |> mutate(Year = as.numeric(Year)))
+summary(EUST_try)
+
+y1 <- log_PFOS ~ 1 + Year + (1 + Year|Site)
+get_prior(y1, EUST_try)
+
+# Ok yea, this looks a lot closer to the example. Let me run with this for a little
+# bit and see what happens. At this point, I just want to understand the processes better
+# and not worry too much on generating the best model. 
+
+# Using default parameters: 
+b_default2 <- brm(y1, EUST_try, seed = 101)
+
+#Diagnosing: 
+print(diagnostic_posterior(b_default2),
+      digits = 4)
+# Rhat < 1.01 and ESS > 400 for both.
+# MCSE is 0.016 and 0.001, so pretty small! 
+# According to the notes, these values are pretty decent. 
+# Not too sure how to completely interpret these quantities...
+
+# Running trace plots: 
+mcmc_trace(b_default2, regex_pars= "b_|sd_")
+# Looks like white noise, no obvious trends. 
+
+
+# Looking at results: 
+summary(b_default2)
 
 
 
 # Comparing to an analogous frequentist fit
 m1 <- lmer(log_PFOS ~ 1 + Site + 1+ Land_Use + (1 + 1|Year), data = EUST_new)
+y1 <- lmer(log_PFOS ~ 1 + Year + (1 + Year|Site), data = EUST_try)
 check_model(m1)
 
+check_model(y1)
+summary(y1)
+
 # Frequentist fit doesn't look toooo bad. There looks to be a lot more variance
-# among the lowest vales, but the PPC, linearuty check, and influential observation 
+# among the lowest vales, but the PPC, linearity check, and influential observation 
 # plots all look alright. 
 
 # Sorry for not getting this right, I'm going to try and see if I can 
