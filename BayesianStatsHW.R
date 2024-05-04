@@ -14,6 +14,7 @@ library(lme4)
 library(brms)
 library(bayesplot)
 library(bayestestR)
+library(tidybayes)
 
 # Loading in data
 load("EUST_Clean.rda")
@@ -58,6 +59,7 @@ test_prior <- function(p) {
     )
   )
   p_df <- EUST_new |> add_predicted_draws(b)
+  ## add_predicted_draws
   ## 'spaghetti plot' of prior preds
   gg0 <- ggplot(p_df,aes(Days, .prediction, group=interaction(Subject,.draw))) +
     geom_line(alpha = 0.1)
@@ -138,3 +140,5 @@ summary(y1)
 
 # Sorry for not getting this right, I'm going to try and see if I can 
 # understand this better in the future. 
+
+## Fair. Sorry I didn't find time to deal with it. I'll mark it as “complete” – in part because it doesn't run. I had to add a library, and then it choked on “Days”. --JD
